@@ -1,8 +1,8 @@
 ---
 title: "5. 표현식과 문(Expression, Statement)"
 description:
-date: 2024-08-04
-update: 2024-08-04
+date: 2024-08-02
+update: 2024-08-02
 tags:
   - Javascript
 series: "모던 자바스크립트 Deep Dive"

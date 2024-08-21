@@ -1,8 +1,8 @@
 ---
 title: "2. 자바스크립트 개발 환경과 실행 방법"
 description:
-date: 2024-08-04
-update: 2024-08-04
+date: 2024-07-31
+update: 2024-07-31
 tags:
   - Javascript
 series: "모던 자바스크립트 Deep Dive"

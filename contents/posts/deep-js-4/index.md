@@ -1,8 +1,8 @@
 ---
 title: "4. 변수(Variable)"
 description:
-date: 2024-08-04
-update: 2024-08-04
+date: 2024-08-01
+update: 2024-08-01
 tags:
   - Javascript
 series: "모던 자바스크립트 Deep Dive"
