@@ -1,8 +1,8 @@
 ---
 title: "9. 타입 변환과 단축 평가(Type Coercion)"
 description:
-date: 2024-08-06
-update: 2024-08-06
+date: 2024-08-23
+update: 2024-08-23
 tags:
   - Javascript
 series: "모던 자바스크립트 Deep Dive"
