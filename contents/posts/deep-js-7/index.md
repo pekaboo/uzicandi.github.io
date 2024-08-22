@@ -1,5 +1,5 @@
 ---
-title: "7. 연산자"
+title: "7. 연산자(Operator)"
 description:
 date: 2024-08-04
 update: 2024-08-04
