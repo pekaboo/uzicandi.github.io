@@ -224,11 +224,18 @@ outer: for() {
 
 ---
 
-> continue 문 은 반복문의 코드 블록 실행을 현 시점에서 중단하고 , 반복문의 증감식으로
-> 실행 흐름을 이동시킨다. ( break 문처럼 반복문을 탈출하지는 않는다. )
+> continue 문 은 반복문의 코드 블록 실행을 현 시점에서 중단하고 ,
+> 반복문의 증감식으로 실행 흐름을 이동시킨다. ( break 문처럼 반복문을 탈출하지는 않는다. )
 
-- if문 내에서 실행해야 할 코드가 한 줄 이라면 -> 반복문 내에서 continue문을 사용할 필요는 없다.
-- 하지만, if 문 내에서 `실행해야 할 코드가 길다면` → `들여쓰기가 한 단계 더 깊어지므로` , continue 문을 사용하는 편이 가독성이 더 좋을 수 있다.
+```
+// for (var i = 0; i < string.length; i++) {
+  // search값이 아니면 현 지점에서 실행을 중단하고 반복문의 증감식으로 이동한다.
+  if(string[i] !== search) continue;
+  count++; // continue문이 실행되면 이 문은 실행되지 않는다.
+}
+```
+
+- if 문 내에서 `실행해야 할 코드가 길다면` → `들여쓰기가 한 단계 더 깊어지므로` , continue 문을 사용하는 편이 가독성이 더 좋을 수 있다.
 
 ```
 // if문 내에서 여러 코드 작성해야 할 경우 -> continue 문을 사용하지 않았을 경우
@@ -244,5 +251,20 @@ for (var i = 0; i < arr.length; i++) {
     // code...
     // code...
   }
+}
+
+// if문 내에서 여러 코드 작성해야 할 경우 -> continue 문을 사용한 경우 -> depth가 하나 줄어들었다.
+var arr = [1, 2, 3, 4, 5];
+var target = 3;
+var count = 0;
+
+for (var i = 0; i < arr.length; i++) {
+  // arr[i] 가 target 초과이면 count 증감하지 않는다.
+  if (arr[i] > target) continue;
+
+  count++;
+  // code...
+  // code...
+  // code...
 }
 ```
