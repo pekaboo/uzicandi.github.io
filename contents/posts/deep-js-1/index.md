@@ -43,7 +43,7 @@ series: "모던 자바스크립트 Deep Dive"
 
 ✍🏻 **렌더링**
 
-```
+```s
 HTML, CSS, JS로 작성된 문서를 해석해서 브라우저에 시각적으로 출력하는 것.
 때로는 서버에서 데이터를 HTML로 변환해서 브라우저에게 전달하는 과정
 (SSR; Server Side Rendering)을 가리키기도 한다.

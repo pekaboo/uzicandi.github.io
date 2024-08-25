@@ -39,10 +39,9 @@ series: "모던 자바스크립트 Deep Dive"
 
 **멀티라인 문자열**
 
-```
+```cs
 // 일반, 문자열 내에서는 줄바꿈(개행)이 허용되지 않는다.
-var str = "Hello
-world";
+var str = "Hello world";
 // SyntaxError: Invaild or unexpected token
 
 // 1️⃣ 그래서 HTML 문자열을 작성시 기존 문자열 방식으로는 이스케이프 시퀀스(\n)를 사용해야 한다.
@@ -69,12 +68,12 @@ var template = `<ul>
 
 **표현식 삽입**
 
-```
+```cs
 // es5
 console.log('My name is'+ first + ' '+ last);
 ```
 
-```
+```cs
 // es6
 console.log(`My name is ${first} ${last}.`);
 ```
@@ -88,7 +87,7 @@ console.log(`My name is ${first} ${last}.`);
 - `undefined`를 개발자가 의도적으로 변수에 할당하는 것은 본래 취지와 어긋난다.
 - 아무것도 없는 빈 값을 의미하려면 null을 할당하라.
 
-```
+```cs
 📚 선언과 정의
 
 - "메모리 주소를 할당하는가"로 구분한다.
@@ -120,7 +119,7 @@ console.log(`My name is ${first} ${last}.`);
 Symbol 이외의 원시 값은 리터럴을 통해 생성하지만, Symbol은 함수를 호출해 생성한다.
 이때 생성된 Symbol값은 외부에 노출되지 않으며, 다른 값과 절대 중복되지 않는 유일무이한 값이다.
 
-```
+```cs
 // 심벌 값 생성
 var key = Symbol('key');
 console.log(typeof key); // symbol
@@ -139,7 +138,7 @@ console.log(obj[key]); // value
 
 ### 데이터 타입의 필요성
 
-```
+```c
 1. 값을 저장할 때 확보해야 하는 "메모리 공간의 크기를 결정"하기 위해
 2. 값을 참조할 때 한 번에 읽어 들여야 할 메모리 공간의 크기를 결정하기 위해
 3. 메모리에서 읽어 들인 2진수를 어떻게 해석할지 결정하기 위해

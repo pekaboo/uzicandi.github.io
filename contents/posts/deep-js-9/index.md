@@ -29,7 +29,7 @@ series: "모던 자바스크립트 Deep Dive"
 
 ### 문자열 타입으로 변환
 
-```
+```c
 // 🎯 주의할 것 중심
 
 // 숫자 타입
@@ -56,7 +56,7 @@ Array + '';           // "function Array() { [native code] }"
 
 ### 숫자 타입으로 변환
 
-```
+```c
 // 문자열 타입
 +""; // 0
 +"0"; // 0
@@ -90,7 +90,7 @@ Array + '';           // "function Array() { [native code] }"
 
 > 자바스크립트 엔진은 불리언 타입이 아닌 값을 `Truthy 값(참으로 평가되는 값)` or `Falsy 값(거짓으로 평가되는 값)` 으로 구분한다.
 
-```
+```cs
 // 💡 자바스크립트 엔진이 Falsy 값으로 판단하는 값
 
 + false
@@ -117,21 +117,21 @@ Array + '';           // "function Array() { [native code] }"
 
 1. `String` 생성자 함수를 `new 연산자` 없이 호출하는 방법
 
-```
+```c
 String(1); // "1"
 String(true) // "true"
 ```
 
 2. `Object.prototype.toString` 메서드를 사용하는 방법
 
-```
+```c
 (Infinity).toString() // "Infinity"
 (true).toString();
 ```
 
 3. `문자열 연결 연산자`를 이용하는 방법
 
-```
+```c
 NaN + ''; // "NaN"
 Infinity + ''; // "Infinity"
 ```
@@ -140,7 +140,7 @@ Infinity + ''; // "Infinity"
 
 1. `Number` 생성자 함수를 `new` 연산자 없이 호출하는 방법
 
-```
+```c
 Number('0'); // 0
 Number(true); // 1
 Number(false) // 0
@@ -148,20 +148,20 @@ Number(false) // 0
 
 2. `parseInt`, `parseFloat` 함수를 사용하는 방법(**문자열만** 숫자 타입으로 변환 가능)
 
-```
+```c
 parseInt('0'); // 0
 ```
 
 3. 단항 산술 연산자를 이용하는 방법
 
-```
+```c
 + '0';  // 0
 + true  // 1
 ```
 
 4. 산술 연산자를 이용하는 방법
 
-```
+```c
 '0' + 1; // 0
 true + 1; // 1
 ```
@@ -170,7 +170,7 @@ true + 1; // 1
 
 1. Boolean 생성자 함수를 new 연산자 없이 호출하는 방법
 
-```
+```c
 // 문자열 타입
 Boolean('x'); // true
 Boolean(''); // false
@@ -193,7 +193,7 @@ Boolean([]);   // true
 
 2. ! 부정 논리 연산자를 두 번 사용하는 방법
 
-```
+```c
 !!'x'   // true
 !!''    // false
 !!0;    // false
@@ -208,17 +208,17 @@ Boolean([]);   // true
 
 > 논리곱(&&) = 논리 연산의 결과를 결정하는 것은 두 번째 피연산자
 
-```
+```c
 'Cat' && 'Dog' // 'Dog'
 ```
 
 > 논리합(||) = 논리 연산의 결과를 결정하는 것은 첫 번째 피연산자
 
-```
+```c
 'Cat' && 'Dog' // 'Cat'
 ```
 
-```
+```c
 | 단축 평가 표현식  | 평가 결과 |
 | ----------------- | -------- |
 | true  || anything | true     |
@@ -231,7 +231,7 @@ Boolean([]);   // true
 
 - 어떤 조건이 Truthy 값(참으로 평가되는 값)일때 무언가를 해야한다면 논리곱(&&) 연산자 표현식으로 if문을 대체한다
 
-```
+```cs
 var done = true;
 var message = "";
 
@@ -244,7 +244,7 @@ message = done && "값";
 
 - 반대로 조건이 Falsy값일 때 무언가를 해야 한다면 논리합(||) 연산자 표현식으로 if문을 대체한다.
 
-```
+```c
 // 💩 조건문으로 값 할당
 if (!done) message = "값";
 
@@ -258,7 +258,7 @@ message = done || "값";
 - 만약 객체를 가리키기를 기대하는 변수의 값이 객체가 아니라 null 또는 undefined인 경우 객체의 프로퍼티를 참조하면 타입 에러가 발생한다.
 - **이 때 단축평가를 사용하면 에러를 발생시키지 않는다.**
 
-```
+```cs
 // 💩
 var elem = null;
 var value = elem.value; // TypeError: Cannot read property 'value' of null
@@ -275,7 +275,7 @@ var elem = elem && elem.value; // null
 - 함수를 호출할 때 인수를 전달하지 않으면 매개변수에는 undefined가 할당된다
 - **단축 평가를 사용해 매개변수의 기본값을 설정하면 undefined로 인해 발생할 수 있는 에러를 방지할 수 있다.**
 
-```
+```cs
 // 💩 인수를 전달하지 않을 경우
 function getStringLength(str) {
   return str.length;
@@ -301,7 +301,7 @@ getStringLength(); // 0
 - 좌항의 피연산자가 null 또는 undefined → `undefined` 반환
 - 그렇지 않은 경우 → 우항의 프로퍼티를 참조
 
-```
+```cs
 var elem = null;
 var value = elem?.value; // undefined
 ```
@@ -310,7 +310,7 @@ var value = elem?.value; // undefined
 - 옵셔널 체이닝 도입 이전에는
   - `논리곱(&&)`을 사용한 `단축 평가`를 통해 → 변수가 null 또는 undefined 인지 확인했음
 
-```
+```cs
 // 💡 논리곱(&&) 연산자 vs 옵셔널 체이닝 연산자
 
 // 💩 논리곱(&&) 연산자 = 좌항 피연산자가 Falsy값이면, 좌항 피연산자를 그대로 반환한다. (단, 0 또는 ''은 객체로 평가될 때도 있다.)
@@ -327,7 +327,7 @@ var length = str?.length; // 0
 - 좌항의 피연산자가 null 또는 undefined → 우항의 피연산자를 반환
 - 그렇지 않은 경우 → 좌항의 프로퍼티를 참조
 
-```
+```cs
 var foo = null ?? "default string"; // "default string"
 ```
 
@@ -335,7 +335,7 @@ var foo = null ?? "default string"; // "default string"
 - null 병합 연산자 도입 이전에는
   - `논리합(||)을 사용한 단축 평가` 를 통해 → 변수에 기본값을 설정했음
 
-```
+```cs
 // 💡 논리합(||) 연산자 vs null 병합 연산자
 
 // 💩 논리합(||) 연산자 = 좌항의 피연산자가 Falsy값이면, 우항의 피연산자를 반환
